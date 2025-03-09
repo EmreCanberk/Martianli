@@ -44,7 +44,7 @@
             margin-top: 15px;
         }
         button {
-            background: #380909;
+            background: #380909; /* Siyah arka plan */
             border: none;
             color: #e0e0e0;
             font-size: 30px;
@@ -57,20 +57,29 @@
             background: #1e1e1e;
             transform: scale(1.1);
         }
+
+   
         button#pause-btn.playing::before {
-            content: "❚❚";
+            content: "❚❚"; 
         }
+
         button#pause-btn.paused::before {
-            content: "▶";
+            content: "▶"; 
         }
+
+        
         button#next-btn::before {
-            content: "▷";
+            content: "▷"; 
             font-size: 30px;
         }
+
+       
         button#prev-btn::before {
-            content: "◁";
+            content: "◁"; 
             font-size: 30px;
         }
+
+     
         .social-icons a {
             display: inline-block;
             margin: 12px;
@@ -90,7 +99,7 @@
         <div class="bio">
             <p>📍 Türkiye</p>
             <p>🎓 Nevsehir University - Computer Science</p>
-            <p>💻 Java, JS, Python, C, WEB</p>
+            <p>💻 Java, JS, Python, C</p>
         </div>
         <div class="player">
             <p>🎵 Currently Playing: <span id="song-name"></span></p>
@@ -99,8 +108,8 @@
                 Tarayıcınız ses çalmayı desteklemiyor.
             </audio>
             <div class="controls">
-                <button id="prev-btn"></button>
-                <button id="pause-btn" class="playing"></button>
+                <button id="prev-btn"></button> 
+                <button id="pause-btn" class="playing"></button> 
                 <button id="next-btn"></button>
             </div>
         </div>
@@ -113,11 +122,11 @@
     <script>
         let songs = [
             {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/madrigal1.mp3', name: 'Dip - Madrigal'},
-            {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/circassian.mp3', name: 'Adyghe Bride'},
+            {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/circassian.mp3', name: 'Adyghe Bride '},
             {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/fırtına.mp3', name: 'Umbrella - Rihanna - JAY-Z'},
             {src: 'https://raw.githubusercontent.com/EmreCanberk/Martianli/main/loganroy.mp3', name: 'Succession - Nicholas Britell'},
             {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/die.mp3', name: 'Die With A Smile - Lady Gaga - Bruno Mars'},
-            {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/madaboutyou.mp3', name: 'Mad About You - Hooverphonic'}
+            {src: 'https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/madaboutyou.mp3', name: 'Mad About You - Hooverphonic'},
         ];
 
         let currentSongIndex = 0;
@@ -138,6 +147,7 @@
             loadSong(currentSongIndex);
         });
 
+     
         document.getElementById('pause-btn').addEventListener('click', function() {
             const player = document.getElementById('audio-player');
             const pauseButton = document.getElementById('pause-btn');
