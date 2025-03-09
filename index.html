@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZGKS3VNBL"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', G-ZZGKS3VNBL');
+    gtag('config', 'G-ZZGKS3VNBL');  <!-- Düzeltilen bölüm -->
 </script>
 
     <meta charset="UTF-8">
@@ -117,7 +116,7 @@
             <p>🎵 Currently Playing: 
                   <span id="song-name"></span></p>
             <audio id="audio-player" controls>
-                <source id="audio-source" src='https://EmreCanberk.github.io/Martianli/music/yalın.mp3', name: 'Sonsuz Ol - Yalın" type="audio/mpeg">
+                <source id="audio-source" src="https://EmreCanberk.github.io/Martianli/music/yalın.mp3" type="audio/mpeg"> >
                 Tarayıcınız ses çalmayı desteklemiyor.
             </audio>
             <div class="controls">
@@ -133,15 +132,15 @@
     </div>
 
     <script>
-         function trackInteraction(action, songName) {
-    gtag('event', action, {
-        'event_category': 'Music',
-        'event_label': songName,
-        'value': 1
-    });
-}
+        function trackInteraction(action, songName) {
+            gtag('event', action, {
+                'event_category': 'Music',
+                'event_label': songName,
+                'value': 1
+            });
+        }
 
-      let songs = [
+        let songs = [
             {src: 'https://EmreCanberk.github.io/Martianli/music/yalın.mp3', name: 'Sonsuz Ol - Yalın'},
             {src: 'https://EmreCanberk.github.io/Martianli/music/madrigal1.mp3', name: 'Dip - Madrigal'},
             {src: 'https://EmreCanberk.github.io/Martianli/music/fırtına.mp3', name: 'Umbrella - Rihanna - JAY-Z'},
@@ -214,9 +213,8 @@
                 pauseButton.classList.add('playing');
             }
         }
-        trackInteraction('play', songs[currentSongIndex].name);
-        trackInteraction('pause', songs[currentSongIndex].name);
 
     </script>
 </body>
 </html>
+
