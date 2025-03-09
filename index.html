@@ -58,7 +58,6 @@
             transform: scale(1.1);
         }
 
-   
         button#pause-btn.playing::before {
             content: "❚❚"; 
         }
@@ -67,19 +66,16 @@
             content: "▶"; 
         }
 
-        
         button#next-btn::before {
             content: "▷"; 
             font-size: 30px;
         }
 
-       
         button#prev-btn::before {
             content: "◁"; 
             font-size: 30px;
         }
 
-     
         .social-icons a {
             display: inline-block;
             margin: 12px;
@@ -90,6 +86,22 @@
         }
         .social-icons a:hover {
             color: #ff8c00;
+        }
+
+        /* Table styling */
+        .time-table {
+            margin-top: 10px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .time-table td {
+            padding: 10px;
+            text-align: center;
+            background-color: rgba(95, 66, 66, 0.4);
+            color: #ffffff;
+            font-size: 16px;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -103,7 +115,7 @@
         </div>
         <div class="player">
             <p>🎵 Currently Playing: <span id="song-name"></span></p>
-            <audio id="audio-player" controls>
+            <audio id="audio-player" controls autoplay>
                 <source id="audio-source" src="https://raw.githubusercontent.com/EmreCanberk/EmreCanberk.github.io/main/madrigal1.mp3" type="audio/mpeg">
                 Tarayıcınız ses çalmayı desteklemiyor.
             </audio>
@@ -112,6 +124,13 @@
                 <button id="pause-btn" class="playing"></button> 
                 <button id="next-btn"></button>
             </div>
+            <!-- Time Table -->
+            <table class="time-table">
+                <tr>
+                    <td>Current Time: <span id="current-time">00:00</span></td>
+                    <td>Total Time: <span id="total-time">00:00</span></td>
+                </tr>
+            </table>
         </div>
         <div class="social-icons">
             <a href="https://github.com/EmreCanberk" target="_blank">🔗 GitHub</a>
@@ -147,7 +166,26 @@
             loadSong(currentSongIndex);
         });
 
-     
+        // Update time every second
+        document.getElementById("audio-player").addEventListener('timeupdate', function() {
+            const currentTime = document.getElementById("current-time");
+            const totalTime = document.getElementById("total-time");
+            const player = document.getElementById("audio-player");
+            
+            let currentMinutes = Math.floor(player.currentTime / 60);
+            let currentSeconds = Math.floor(player.currentTime % 60);
+            let totalMinutes = Math.floor(player.duration / 60);
+            let totalSeconds = Math.floor(player.duration % 60);
+
+            // Format time as MM:SS
+            currentTime.textContent = `${padTime(currentMinutes)}:${padTime(currentSeconds)}`;
+            totalTime.textContent = `${padTime(totalMinutes)}:${padTime(totalSeconds)}`;
+        });
+
+        function padTime(time) {
+            return time < 10 ? `0${time}` : time;
+        }
+
         document.getElementById('pause-btn').addEventListener('click', function() {
             const player = document.getElementById('audio-player');
             const pauseButton = document.getElementById('pause-btn');
@@ -190,3 +228,4 @@
     </script>
 </body>
 </html>
+
