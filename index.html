@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+   
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZGKS3VNBL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', G-ZZGKS3VNBL');
+</script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janberk Dev.</title>
@@ -123,6 +132,14 @@
     </div>
 
     <script>
+         function trackInteraction(action, songName) {
+    gtag('event', action, {
+        'event_category': 'Music',
+        'event_label': songName,
+        'value': 1
+    });
+}
+
         let songs = [
             {src: 'https://raw.githubusercontent.com/EmreCanberk/Martianli/main/yalın.mp3', name: 'Sonsuz Ol - Yalın'},
             {src: 'https://raw.githubusercontent.com/EmreCanberk/Martianli/main/madrigal1.mp3', name: 'Dip - Madrigal'},
@@ -198,6 +215,9 @@
                 pauseButton.classList.add('playing');
             }
         }
+        trackInteraction('play', songs[currentSongIndex].name);
+        trackInteraction('pause', songs[currentSongIndex].name);
+
     </script>
 </body>
 </html>
