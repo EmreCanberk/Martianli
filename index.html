@@ -58,7 +58,6 @@
             transform: scale(1.1);
         }
 
-   
         button#pause-btn.playing::before {
             content: "❚❚"; 
         }
@@ -67,19 +66,16 @@
             content: "▶"; 
         }
 
-        
         button#next-btn::before {
             content: "▷"; 
             font-size: 30px;
         }
 
-       
         button#prev-btn::before {
             content: "◁"; 
             font-size: 30px;
         }
 
-     
         .social-icons a {
             display: inline-block;
             margin: 12px;
@@ -90,6 +86,12 @@
         }
         .social-icons a:hover {
             color: #ff8c00;
+        }
+
+     
+        audio {
+            width: 300px; 
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -147,7 +149,6 @@
             loadSong(currentSongIndex);
         });
 
-     
         document.getElementById('pause-btn').addEventListener('click', function() {
             const player = document.getElementById('audio-player');
             const pauseButton = document.getElementById('pause-btn');
@@ -189,4 +190,4 @@
         }
     </script>
 </body>
-</html> 
+</html>
