@@ -44,7 +44,7 @@
             margin-top: 15px;
         }
         button {
-            background: #380909; /* Siyah arka plan */
+            background: #380909; 
             border: none;
             color: #e0e0e0;
             font-size: 30px;
@@ -58,28 +58,28 @@
             transform: scale(1.1);
         }
 
-        /* Play/Pause simgesi */
+       
         button#pause-btn.playing::before {
-            content: "❚❚"; /* Durdurma simgesi */
+            content: "❚❚"; 
         }
 
         button#pause-btn.paused::before {
-            content: "▶"; /* Oynatma simgesi */
+            content: "▶"; 
         }
 
-        /* İleri butonu (boş iç kısmı olan) */
+        
         button#next-btn::before {
-            content: "▷"; /* İleri butonu */
+            content: "▷"; 
             font-size: 30px;
         }
 
-        /* Geri butonu */
+       
         button#prev-btn::before {
-            content: "◁"; /* Geri butonu */
+            content: "◁"; 
             font-size: 30px;
         }
 
-        /* Sosyal medya linkleri */
+        
         .social-icons a {
             display: inline-block;
             margin: 12px;
@@ -108,9 +108,9 @@
                 Tarayıcınız ses çalmayı desteklemiyor.
             </audio>
             <div class="controls">
-                <button id="prev-btn"></button> <!-- Geri Butonu -->
-                <button id="pause-btn" class="playing"></button> <!-- Play/Pause -->
-                <button id="next-btn"></button> <!-- İleri Butonu -->
+                <button id="prev-btn"></button> 
+                <button id="pause-btn" class="playing"></button> 
+                <button id="next-btn"></button>
             </div>
         </div>
         <div class="social-icons">
@@ -150,7 +150,7 @@
             loadSong(currentSongIndex);
         });
 
-        // Play/Pause işlevi
+       
         document.getElementById('pause-btn').addEventListener('click', function() {
             const player = document.getElementById('audio-player');
             const pauseButton = document.getElementById('pause-btn');
