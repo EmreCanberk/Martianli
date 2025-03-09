@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,20 +21,6 @@
             border-radius: 12px;
             box-shadow: 0 0 15px rgba(26, 13, 13, 0.2);
         }
-        audio::-webkit-media-controls-time-remaining-display,
-        audio::-webkit-media-controls-current-time-display {
-                font-size: 12px !important; 
-        
-        audio {
-            width: 100%; 
-            max-width: 200px; 
-            display: block;
-            margin: auto; 
-}
-
-             
-}
-
         .logo {
             font-size: 28px;
             font-weight: 500;
@@ -47,54 +33,30 @@
             font-weight: 400;
             line-height: 1.5;
         }
-       .player {
-            margin-top: 20px;
-            background: rgba(148, 36, 36, 0.85); 
-            padding: 10px;
+        .player {
+            margin-top: 30px;
+            background: rgba(148, 36, 36, 0.85);
+            padding: 20px;
             border-radius: 12px;
             box-shadow: 0 0 10px rgba(95, 66, 66, 0.3);
-            max-width: 100%;
         }
-
         .controls {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+            margin-top: 15px;
         }
-        
         button {
             background: #380909; 
             border: none;
-            color: #ffffff;
-            font-size: 24px;
+            color: #e0e0e0;
+            font-size: 30px;
             cursor: pointer;
-            padding: 8px 12px;
+            padding: 12px 18px;
             border-radius: 50%;
             transition: background 0.3s ease, transform 0.2s ease;
         }
-
         button:hover {
-            background: #8a2828;
+            background: #1e1e1e;
             transform: scale(1.1);
         }
-
-
-        @media (max-width: 480px) {
-        .player {
-            padding: 10px;
-        }
-
-        .controls {
-            gap: 10px;
-        }
-
-        button {
-            font-size: 20px;
-            padding: 8px 12px;
-        }
-        }
-
 
    
         button#pause-btn.playing::before {
@@ -228,4 +190,3 @@
     </script>
 </body>
 </html>
-
