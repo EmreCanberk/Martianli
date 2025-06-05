@@ -1,0 +1,106 @@
+body {
+    background-color:#09403A;
+    color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 8px;
+    padding: 20px;
+}
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #072623;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #BFBFBF;
+ }
+.logo {
+    font-size: 35px;
+    font-weight: 500;
+    margin-bottom: 18px;
+    color: #cfcccc;
+}
+.bio {
+    font-size: 16px;
+    margin-bottom: 25px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+.player {
+    margin-top: 30px;
+    background: #09403A;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px #0e290f;
+}
+.controls {
+    margin-top: 15px;
+}
+button {
+    background: #3d3d3d; 
+    border: none;
+    color: #e0e0e0;
+    font-size: 30px;
+    cursor: pointer;
+    padding: 12px 18px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+button:hover {
+    background: #666161;
+    transform: scale(1.1);
+}
+
+button#pause-btn.playing::before {
+    content: "❚❚"; 
+}
+
+button#pause-btn.paused::before {
+    content: "▶"; 
+}
+
+button#next-btn::before {
+    content: "▷"; 
+    font-size: 30px;
+}
+
+button#prev-btn::before {
+    content: "◁"; 
+    font-size: 30px;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin: 12px;
+    font-size: 20px;
+    color: #9e9696;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+
+audio {
+    width: 100%;
+    max-width: 270px;
+    margin-top: 8px;
+}
+
+.player {
+    width: 100%;
+    max-width: 300px;
+    margin: auto;
+    padding: 8px;
+}
+
+@media (max-width: 480px) {
+    .player {
+        max-width: 90%;
+    }
+
+    audio {
+        width: 100%;
+    }
+}
